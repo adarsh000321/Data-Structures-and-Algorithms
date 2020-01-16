@@ -1,0 +1,62 @@
+Ref Links: 1.http://mathsfirst.massey.ac.nz/Calculus/Sign2ndDer/Sign2DerPOI.htm
+            2.https://www.youtube.com/watch?v=LcEqOzNov4E
+            3.https://www.youtube.com/watch?v=quA0wJ71GkQ
+            4.https://courses.lumenlearning.com/wm-macroeconomics/chapter/interpreting-slope/  (TO KNOW WHEN SLOPE IS POSITIVE OR NEGATIVE)
+
+Slope: Slope like this ' / ' (bent forward) is positive. This ' \ ' (bent backward) is negative.
+
+Inflation Point : Concavity changes at this point i.e., from concave upwards to concave downwards or vice versa
+
+Concavity: Two Types Concave Function :- (Video 2)
+
+             1. Concave Downward (Concave) function : Slope in this type of graph first gradually becomes less positive, then it becomes zero and then gradually
+                becomes negative [This graph increases first, then reaches maximum and then decreases].
+                Note : local max. point can be found using ternary search, if we have Concave downward function.
+                Let f(x) be concave downward function. Then from above defination, we know slope of this function will be decreasing (positive to negative) i.e.,
+                f'(x) (1st derivative) will be decreasing => f''(x)<0
+                Note: if f'(a)=0 then 'a' is max.(local) point
+
+             2. Concave Upward (Convex) function : Slope in this type of graph first gradually becomes less negative, then it becomes zero and then gradually
+                becomes positive [This graph is decreases first, then reaches minimum and then increases].
+                Note: local min, point can be found using ternary serch, if we have Concave Upward function.
+                Let f(x) be concave upward function. Then from above defination, we know slope of this function will be increasing (negative to positive) i.e.,
+                f'(x) will be increasing => f''(x)>0
+                Note: of f'(a)=0 then 'a' is min.(local) point
+
+Q. What if f''(x)=0 at some point/s ?
+   Let 'a' be some point on any concave function and f''(a)=0 then inflation point exist (i.e., concavity changes if we go from left of 'a' to its right)
+   and 'a' is x-coordinate of that inflation point.
+   Inflation Point : (a,f(a))
+
+Q. What if f''(x) is undefined at some point/s ?
+   Let 'a' be some point on any concave function and f''(a)=undefined then there cannot exist any inflation point
+   Note : concavity still changes if we go from left of 'a' to its right
+
+eg: Let f(x) = 1/(x+1) 
+        f'(x) = -1/(x+1)^2
+        f''(x) = 2/(x+1)^3
+        Now, notice at point x=-1 in f''(x), the function is undefined i.e., no inflation point exist
+        Putting any value a>-1 we can see f''(x)>0 i.e., f'(x) is increasing i.e., f(x) have shape of concave upward graph for x>0 
+        Putting any value a<-1 we can see f''(x)<0 i.e., f'(x) is decreasing i.e., f(x) have shape of concave downward graph for x<0
+
+eg: Let f(x) = x^3 + 2
+        f'(x) = 3x^2 
+        f''(x) = 6x
+        Notice at point x=0, f''(x=0)=0 i.e., inflation point exist.
+        Inflation Point =(0,f(0))=(0,2)
+        Putting any value a>0 we can see f''(x)>0 i.e., f'(x) is increasing i.e., f(x) have shape of concave upward graph for x>0
+        Putting any value a<0 we can see f''(x)<0 i.e., f'(x) is decreasing i.e., f(x) have shape of concave downward graph for x<0
+
+eg: https://codeforces.com/contest/1288/problem/A (Codeforces: DeadLine)
+    In this, we need to find x such that  x + ceil(d/(x+1)) <= n , if possible
+
+    Let f(x) = x + ceil(d/(x+1)) = x + (d+x)/(x+1) = x + (d-1)/(x+1) + 1 
+    f'(x) = 1 - (d-1)/(x+1)^2
+    f''(x) = 2(d-1)/(x+1)^3
+    Putting x=-1 , f''(x)=undefined. Therefore no inflation point exist.
+    for x<-1 , f''(x) <0 i.e., f'(x) is decreasing i.e., f(x) have shape of concave downward graph for x<-1
+    for x>-1 , f''(x) >0 i.e., f'(x) is increasing i.e., f(x) have shape of concave upward graph for x>-1
+    
+    In our problem, it is given that x must be non-negative integer i.e., for us , f(x) is concave upward function and is increasing. Therefore, we
+    can find min. point in f(x) using ternary search.
+    Submission : https://codeforces.com/contest/1288/submission/68892231
