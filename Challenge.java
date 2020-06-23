@@ -12,6 +12,8 @@ public class Main{
         map.put("2019-01-10",10);map.put("2019-01-11",20);map.put("2019-01-12",15);map.put("2019-01-13",10);
         System.out.println(solution(map));
     }
+    
+    // worst case time complexity :(approx) O(4000000)
     static String solution(LinkedHashMap<String,Integer> map){// map is used to store (key,value) pair
         try {
             Map.Entry<String, Integer> prev = null;
